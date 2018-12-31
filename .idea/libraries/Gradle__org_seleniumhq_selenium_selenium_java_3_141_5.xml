@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.seleniumhq.selenium:selenium-java:3.141.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-java/3.141.5/ed49d6a1a41aa43ca012663c1a0f7c130811a617/selenium-java-3.141.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

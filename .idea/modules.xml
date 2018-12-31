@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lum-report.iml" filepath="$PROJECT_DIR$/.idea/modules/lum-report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lum-report_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lum-report_main.iml" group="lum-report" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lum-report_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lum-report_test.iml" group="lum-report" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lum-testng.iml" filepath="$PROJECT_DIR$/.idea/modules/lum-testng.iml" group="lum-testng" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lum-testng/lum-testng_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lum-testng/lum-testng_main.iml" group="lum-testng" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lum-testng/lum-testng_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lum-testng/lum-testng_test.iml" group="lum-testng" />
+    </modules>
+  </component>
+</project>

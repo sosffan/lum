@@ -1,0 +1,3 @@
+rootProject.name = 'lum-report'
+include 'lum-testng'
+
