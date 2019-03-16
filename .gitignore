@@ -23,7 +23,7 @@
 hs_err_pid*
 
 # IDEA configuration files
-.idea
+.idea/
 
 # Gradle configuration files
-.gradle
+.gradle/
