@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by fanfei on 11/12/2018.
  */
-public class TestSuiteProperties implements Serializable {
+public class  TestSuiteProperties implements Serializable {
 
     List<TestCaseProperties> testCaseProperties = null;
 

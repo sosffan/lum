@@ -7,6 +7,7 @@ import java.lang.annotation.Annotation;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.*;
@@ -39,8 +40,7 @@ public class LumTestCaseListener implements ITestListener {
      */
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("\ntest listener onTestStart");
-
+        LOGGER.debug("\ntest listener onTestStart");
         ResultTracker tracker = resultTracker.get();
 
         ITestNGMethod method = result.getMethod();
@@ -48,7 +48,7 @@ public class LumTestCaseListener implements ITestListener {
         String testCaseName = method.getMethodName();   // Test Case name
         String className = testClass.getName(); // Class name
 
-        Map<String, String> annotations = getAnnotations(method);
+        Map<String, String> annotations = getMethodAnnotations(method);
         TestCaseProperties testCaseProperties = new TestCaseProperties();
         testCaseProperties.setTestCaseName(testCaseName);
         testCaseProperties.setTestClassName(className);
@@ -166,7 +166,7 @@ public class LumTestCaseListener implements ITestListener {
 
         System.out.println("on finish ---------------- end.");
 
-        DataUtils.wirteToDisk(a, "./ffantestResportLocatioin/");
+        DataUtils.wirteToDisk(a, "report/result.json");
 
     }
 
@@ -174,9 +174,9 @@ public class LumTestCaseListener implements ITestListener {
      * Got all annotations from method and class
      *
      * @param method the method of this test
-     * @return a map with annotation name and value
+     * @return a map with annotation name and valuse
      */
-    private Map<String, String> getAnnotations(ITestNGMethod method) {
+    private Map<String, String> getMethodAnnotations(ITestNGMethod method) {
 
         ConstructorOrMethod constructorOrMethod = method.getConstructorOrMethod();
 
@@ -186,12 +186,13 @@ public class LumTestCaseListener implements ITestListener {
                 .flatMap(m -> Stream.of(m.getAnnotations()))
                 .collect(Collectors.toList());
 
-        List<Annotation> classAnnotationList = Stream.of(constructorOrMethod)
-                .map(ConstructorOrMethod::getDeclaringClass)
-                .flatMap(m -> Stream.of(m.getAnnotations()))
-                .collect(Collectors.toList());
-
-        annotationList.addAll(classAnnotationList); // Data formats: ["@com.packagepath.AnnotationName(value=AnnotationVaule)", ..]
+        // The same Annotation in class level and method level has the same name, put them in Map would cause over write
+//        List<Annotation> classAnnotationList = Stream.of(constructorOrMethod)
+//                .map(ConstructorOrMethod::getDeclaringClass)
+//                .flatMap(m -> Stream.of(m.getMethodAnnotations()))
+//                .collect(Collectors.toList());
+//
+//        annotationList.addAll(classAnnotationList); // Data formats: ["@com.packagepath.AnnotationName(value=AnnotationVaule)", ..]
 
         Map<String, String> annotationMap = new HashMap<>();
 

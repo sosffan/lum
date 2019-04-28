@@ -29,7 +29,7 @@ public class TestDemo01 {
         assertEquals("", "a");
     }
 
-    @Test
+    @Test(enabled = false)
     public void test03() {
         System.setProperty("webdriver.gecko.driver","/Users/fanfei/workspace/tools/geckodriver");
         System.setProperty("name", "testname");
